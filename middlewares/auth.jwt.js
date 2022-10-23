@@ -1,0 +1,33 @@
+const jwt = require('jsonwebtoken');
+const configSecret = require('../config/config.secret');
+
+
+verifyJwtToken = (req, res, next) => {
+    //get token from headers
+    const token = req.headers['x-access-token'];
+
+    //if token is not there, user is not authorised to access uri
+    if(!token) {
+        return res.status(403).send({"message": "Unauthorised"});
+    }
+
+    //if token is there, then verify its signatures
+    jwt.verify(token, configSecret.secret, (err, decodedToken)=> {
+        //if some error while decoding token or token is compromised , then send unauthenticated    
+        if(err){
+            return res.status(401).send({"message": "Unauthorised"});
+        }
+
+        //else , get user id from token and attach in request params
+        req.params['userId'] = decodedToken.id;
+        next();
+
+    });
+}; // verifyJwtToken module ends here
+
+
+const authJwt = {
+    verifyJwtToken
+}
+
+module.exports = authJwt;

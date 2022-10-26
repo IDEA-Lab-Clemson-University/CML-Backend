@@ -23,7 +23,7 @@ exports.signup = (req, res) => {
             return;
         }
 
-        res.status(200).send({message: "User registered successfully !"});
+        res.status(200).send({"message": "User registered successfully !"});
         return;
     });
 

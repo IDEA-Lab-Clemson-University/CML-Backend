@@ -1,4 +1,5 @@
 const { default: mongoose } = require("mongoose");
+const { ObjectId } = require("mongoose").Types;
 const User = require("../models/user");
 const Question = require("../models/questions");
 const Badge = require("../models/badges");
@@ -7,6 +8,9 @@ const TravelLog = require("../models/travelLogs");
 
 //add travel log
 //Note: travel logs is basically an answer to a question.
+// Logic: 
+//add points(energy) when log is added. 
+// achive baddge when points/energy cross some threshold.
 exports.addTravelLog = (req, res) => {
     const userId = req.params.userId;
     console.log(userId);
@@ -22,7 +26,7 @@ exports.addTravelLog = (req, res) => {
         //if user is there
         if(user) {
             let questionData ;
-            Question.findById(req.body.questionId).exec((err, question)=> {
+            Question.findOne({id: ObjectId(req.body.questionId)}).exec((err, question)=> {
                 if(err){
                     console.log(err);
                     res.status(500).send({"message": "Question details not found !"});
@@ -45,8 +49,19 @@ exports.addTravelLog = (req, res) => {
                     res.status(500).send({"message": 'Error while saving travel log'});
                     return;
                 }
+
+                //add points to user
+                let updatedPoints = user.points+questionData.points;
+                user.updateOne({'points':updatedPoints}, (err, success)=> {
+                    if(err) {
+                        console.log('user points could not be updated');
+                        console.log(err);                        
+                        res.status(500).send({"message": err});
+                        return;
+                    }
+                });
         
-                //increase user points
+
                 res.status(200).send({message: "Travel log added successfully !"});
                 return;
             });  
@@ -61,12 +76,14 @@ exports.addTravelLog = (req, res) => {
 
 //edit a travel log
 //Only logged in user can edit his/her travel logs
+//TODO; discuss this with team.
 exports.editTravelLog = (req, res) => {
     
 }
 
 //delete a travel log
 //Only logged in user can delete his/her travel logs
+//TODO: discuss with team, if yes, then should decrease the energy/points ?
 exports.deleteTravelLog = (req, res) => {
     const userId = req.params.userId;
     const travelLogId = req.params.travelLogId;
@@ -100,8 +117,8 @@ exports.deleteTravelLog = (req, res) => {
 exports.getAllTravelLogsOfAUser = (req, res) => {
     const userId = req.params.userId;
     console.log(userId);
-    let logs=[];
-    User.findById(userId).exec((err, user)=> {
+
+    User.find({id: ObjectId(userId)}).exec((err, user)=> {
        
         if(err) {
             console.log(err);
@@ -110,19 +127,19 @@ exports.getAllTravelLogsOfAUser = (req, res) => {
         }
 
         //if user is there
+        console.log(user);
         if(user) {
-            TravelLog.find({"userId": userId}).exec((err, travelLogs)=> {
+            TravelLog.find({user:  ObjectId(userId)}).exec((err, travelLogs)=> {
                 if(err){
                     res.status(500).send({"message": "SYSTEM_MALFUNCTION"});
                     return;
                 }
-               logs =  travelLogs;
+               return res.status(200).send(travelLogs);
             });
         } else {
             res.status(404).send({message: "User not found !"});
             return;
         }
-        return res.status(200).send(logs);
     });
 };
 
@@ -215,3 +232,8 @@ exports.editUserProfile = (req, res) => {
         }
     });
 };
+
+
+//endpoint for travelling future->present or vice versa
+//this will consume some energy and will update the users points.
+//this will also help in achieving some badges to user.

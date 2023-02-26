@@ -13,24 +13,30 @@ const User = mongoose.model("users", new mongoose.Schema({
                 type: Number,
                 required: true
             },
-            email: {
-                type: String,
-                required: true,
-                unique: true
-            },
+            // email: {
+            //     type: String,
+            //     required: true,
+            //     unique: true
+            // },
             password: {
                 type: String,
                 required: true
             },
             agentName: {
                 type: String,
-                required: true
+                required: true,                        
+                unique: true
             },
             points: {
                 type: Number,
                 required: true,
                 default: 0
             },
+            interests: [
+                {
+                    type: String
+                }
+            ],
             badges: [
                 {
                 type: mongoose.Schema.Types.ObjectId,

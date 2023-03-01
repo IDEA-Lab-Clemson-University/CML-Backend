@@ -6,10 +6,10 @@ const APP_PORT = 8001;
 
 
 //middlewares
-// app.use(cors());
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-
+app.use(cors());
 
 
 
@@ -23,8 +23,11 @@ app.get('/ping', (req, res)=> {
     return res.json({"msg":"hello from captain Storm"});
 });
 
+
+require('./routes/scripts.routes')(app);
 require('./routes/auth.routes')(app);
 require('./routes/user.routes')(app);
+
 
 //restrict this endpoint to be used by admins only.
 require('./routes/question.routes')(app);

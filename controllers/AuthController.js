@@ -9,22 +9,24 @@ exports.signup = (req, res) => {
     // console.log(req);
     console.log(req.body);
     //{"name":{"first":"snow","last":"yuki"},"age":9,"interests":["i play basketball","skiing","singing"],"agentName":"Wind"}
-
+    const data = req.body;
+    console.log(data);
     let newuser = new User({
-        firstName: req.body.name.first,
-        lastName: req.body.name.last,
-        age: req.body.age,
-        // email: req.body.email,
-        agentName : req.body.agentName, //uniue
-        password: bcrypt.hashSync(req.body.password, 8), //encrypt the password here
-        interests: req.body.interests,        
+        firstName: req.body.data.name.first,
+        lastName: req.body.data.name.last,
+        age: req.body.data.age,
+        agentName : req.body.data.agentName, //uniue
+        password: bcrypt.hashSync(req.body.data.password, 8), //encrypt the password here
+        interests: req.body.data.interests,        
         badges: [],
     });
+
+    console.log(newuser);
 
     //check if user with this agent name already exists
     //if exists warn and ask for new agent name else save the user entity
     User.findOne({
-        agentName: req.body.agentName
+        agentName: req.body.data.agentName
     }).exec((err, user)=> {
 
         if(err){

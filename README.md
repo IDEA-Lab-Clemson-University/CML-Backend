@@ -9,8 +9,14 @@
 ## install dependencies
 - npm install --save
 
+## Enviromentvariables
+-  add .env file at your root
+-  put content
+   MONGO_DB_URL= <YOUR_MONGO_DB_SERVER_CONNECTION_STRING>
+
 ## install nodemon (globally)
 - npm install -g nodemon
+
 
 ## start the application
 - nodemon app

@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "63558623cbd5f1da76159d24"
+  },
+  "question": "what is date and time of your current location ? ",
+  "points": 500,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63558633cbd5f1da76159d26"
+  },
+  "question": "describe your current location ? ",
+  "points": 700,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6358aea940e5e8b6911be528"
+  },
+  "question": "describe your current location ? ",
+  "points": 700,
+  "__v": 0
+}]

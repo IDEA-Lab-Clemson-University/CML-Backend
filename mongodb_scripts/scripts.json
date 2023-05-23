@@ -1,0 +1,511 @@
+[{
+  "_id": {
+    "$oid": "63fba330ec81afcdf4f56674"
+  },
+  "id": 1,
+  "speaker": "Captain Storm",
+  "dialog": "Welcome to the SPOT Agency, my name is Captain Storm.",
+  "avatar": "/img/characters/captain-storm/storm_yeah.png",
+  "background": "/img/backgrounds/captain_office.jpg",
+  "type": "welcome"
+},{
+  "_id": {
+    "$oid": "63fba330ec81afcdf4f56675"
+  },
+  "id": 2,
+  "speaker": "Captain Storm",
+  "dialog": "Recently, a team of scientists and researchers found a way to travel into the future! ",
+  "avatar": "/img/characters/captain-storm/gesture_2_storm.png",
+  "background": "/img/backgrounds/captain_office.jpg",
+  "type": "welcome"
+},{
+  "_id": {
+    "$oid": "63fba330ec81afcdf4f56676"
+  },
+  "id": 3,
+  "speaker": "Captain Storm",
+  "dialog": "But now they need volunteers to go on a mission to the year 2075 to see what the future is like.",
+  "avatar": "/img/characters/captain-storm/gesture_2_storm.png",
+  "background": "/img/backgrounds/captain_office.jpg",
+  "type": "welcome"
+},{
+  "_id": {
+    "$oid": "63fba330ec81afcdf4f56677"
+  },
+  "id": 4,
+  "speaker": "Captain Storm",
+  "dialog": "They are specifically interested in the type of technology that will be available. ",
+  "avatar": "/img/characters/captain-storm/gesture_2_storm.png",
+  "background": "/img/backgrounds/captain_office.jpg",
+  "type": "welcome"
+},{
+  "_id": {
+    "$oid": "63fba330ec81afcdf4f56678"
+  },
+  "id": 5,
+  "speaker": "Captain Storm",
+  "dialog": "We can solve future problems from the past! Pretty cool, right? But it's very top secret! Let me tell you your secret mission.",
+  "avatar": "/img/characters/captain-storm/gesture_2_storm.png",
+  "background": "/img/backgrounds/captain_office.jpg",
+  "type": "welcome"
+},{
+  "_id": {
+    "$oid": "63fba330ec81afcdf4f56679"
+  },
+  "id": 6,
+  "speaker": "Captain Storm",
+  "dialog": "Your mission is to go into the future, explore any technologies you find, spot any problems the technologies may have and solve those problems.",
+  "avatar": "/img/characters/captain-storm/storm_gesture_4.png",
+  "background": "/img/backgrounds/captain_office.jpg",
+  "type": "welcome"
+},{
+  "_id": {
+    "$oid": "63fba330ec81afcdf4f5667a"
+  },
+  "id": 7,
+  "speaker": "Captain Storm",
+  "dialog": "You will bring back information that will help you design technologies that are good for your community.",
+  "avatar": "/img/characters/captain-storm/storm_gesture_4.png",
+  "background": "/img/backgrounds/captain_office.jpg",
+  "type": "welcome"
+},{
+  "_id": {
+    "$oid": "63fba330ec81afcdf4f5667b"
+  },
+  "id": 8,
+  "speaker": "Captain Storm",
+  "dialog": "So glad you are now a part of our team! Now our agents will get you started and set up in the SPOT system.",
+  "avatar": "/img/characters/captain-storm/storm_gesture_4.png",
+  "background": "/img/backgrounds/captain_office.jpg",
+  "type": "welcome"
+},{
+  "_id": {
+    "$oid": "63fba330ec81afcdf4f5667c"
+  },
+  "id": 9,
+  "speaker": "Captain Storm",
+  "dialog": "Agent Fern is our brilliant physicist who developed a way to time travel!",
+  "avatar": "/img/characters/captain-storm/storm_yeah.png",
+  "background": "/img/backgrounds/captain_office.jpg",
+  "type": "welcome"
+},{
+  "_id": {
+    "$oid": "63fba330ec81afcdf4f5667d"
+  },
+  "id": 10,
+  "speaker": "Captain Storm",
+  "dialog": "Agent Gear is our engineer who designed and built special SPOT robots!",
+  "avatar": "/img/characters/captain-storm/storm_gesture_4.png",
+  "background": "/img/backgrounds/captain_office.jpg",
+  "type": "welcome"
+},{
+  "_id": {
+    "$oid": "63fba330ec81afcdf4f5667e"
+  },
+  "id": 11,
+  "speaker": "Captain Storm",
+  "dialog": "Agent Spark is our software developer. She writes the code for all our SPOT tech!",
+  "avatar": "/img/characters/captain-storm/storm_gesture_4.png",
+  "background": "/img/backgrounds/captain_office.jpg",
+  "type": "welcome"
+},{
+  "_id": {
+    "$oid": "63fba330ec81afcdf4f5667f"
+  },
+  "id": 12,
+  "speaker": "Agent Spark",
+  "dialog": "Hello! Great to meet you Agent...",
+  "avatar": "/img/characters/agent-spark/spark_wave.png",
+  "background": "/img/backgrounds/Agency_Walkway.jpg",
+  "type": "welcome"
+},{
+  "_id": {
+    "$oid": "63fba330ec81afcdf4f56680"
+  },
+  "id": 13,
+  "speaker": "Agent Spark",
+  "dialog": "Oops, you don't have a secret agent name yet! That's so important!",
+  "avatar": "/img/characters/agent-spark/spark_surprised.png",
+  "background": "/img/backgrounds/Agency_Walkway.jpg",
+  "type": "welcome"
+},{
+  "_id": {
+    "$oid": "63fba330ec81afcdf4f56681"
+  },
+  "id": 14,
+  "speaker": "Agent Spark",
+  "dialog": "Your agent name should be something that inspires you! Mine is Agent Spark because I love electronic gadgets. ",
+  "avatar": "/img/characters/agent-spark/spark_gesture_1.png",
+  "background": "/img/backgrounds/Agency_Walkway.jpg",
+  "type": "welcome"
+},{
+  "_id": {
+    "$oid": "63fba330ec81afcdf4f56682"
+  },
+  "id": 15,
+  "speaker": "Agent Spark",
+  "dialog": "Agent Fern is inspired by plants and things that grow.",
+  "avatar": "/img/characters/agent-spark/spark_gesture_1.png",
+  "background": "/img/backgrounds/Agency_Walkway.jpg",
+  "type": "welcome"
+},{
+  "_id": {
+    "$oid": "63fba330ec81afcdf4f56683"
+  },
+  "id": 16,
+  "speaker": "Agent Spark",
+  "dialog": "Agent Gear is inspired by motorcycles!",
+  "avatar": "/img/characters/agent-spark/spark_aww.png",
+  "background": "/img/backgrounds/Agency_Walkway.jpg",
+  "type": "welcome"
+},{
+  "_id": {
+    "$oid": "63fba330ec81afcdf4f56684"
+  },
+  "id": 17,
+  "speaker": "Agent Spark",
+  "dialog": "What inspired you? I'm sure you will choose a great secret agent name!",
+  "avatar": "/img/characters/agent-spark/spark_aww.png",
+  "background": "/img/backgrounds/Agency_Walkway.jpg",
+  "type": "welcome"
+},{
+  "_id": {
+    "$oid": "63fba330ec81afcdf4f56685"
+  },
+  "id": 18,
+  "speaker": "Agent Spark",
+  "dialog": "Here is your SPOT tablet. You will use this to keep track of your mission to the future. Let's get yours set up! ",
+  "avatar": "/img/characters/agent-spark/spark_talking.png",
+  "background": "/img/backgrounds/Agency_Walkway.jpg",
+  "type": "welcome"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9df"
+  },
+  "id": 1,
+  "speaker": "Captain Storm",
+  "dialog": "Thank you Agent Spark! It looks like our new agent-in-training is ready to go to the lab!",
+  "avatar": "/img/characters/captain-storm/storm_thumbs_up.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9e0"
+  },
+  "id": 2,
+  "speaker": "Captain Storm",
+  "dialog": "This is the lab! Agent Fern will help you.",
+  "avatar": "/img/characters/captain-storm/storm_gesture_4.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9e1"
+  },
+  "id": 3,
+  "speaker": "Captain Storm",
+  "dialog": "But, before you start your training, you will need a...",
+  "avatar": "/img/characters/captain-storm/storm_gesture_4.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9e2"
+  },
+  "id": 4,
+  "speaker": "Agent Fern",
+  "dialog": "A Bot Buddy!",
+  "avatar": "/img/characters/agent-fern/fern_point.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9e3"
+  },
+  "id": 5,
+  "speaker": "Captain Storm",
+  "dialog": "Yes, thank you Agent Fern! A Bot Buddy!",
+  "avatar": "/img/characters/captain-storm/storm_laughing.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9e4"
+  },
+  "id": 6,
+  "speaker": "Agent Fern",
+  "dialog": "Great to see you, Captain Storm! Welcome, [AGENT NAME]! I can't wait to tell you about Bot Buddy!",
+  "avatar": "/img/characters/agent-fern/fern_wave.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9e5"
+  },
+  "id": 7,
+  "speaker": "Agent Fern",
+  "dialog": "Your Bot Buddy will be your companion during this mission. Bot Buddies can provide clues and receive directions form Mission Control.",
+  "avatar": "/img/characters/agent-fern/fern_talking.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9e6"
+  },
+  "id": 8,
+  "speaker": "Agent Fern",
+  "dialog": "It will be super useful in your mission to the future!",
+  "avatar": "/img/characters/agent-fern/fern_bro.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9e7"
+  },
+  "id": 9,
+  "speaker": "Captain Storm",
+  "dialog": "Agent Fern... where are the Bot Buddies?",
+  "avatar": "/img/characters/captain-storm/storm_unsure.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9e8"
+  },
+  "id": 10,
+  "speaker": "Agent Fern",
+  "dialog": "I don't know!!",
+  "avatar": "/img/characters/agent-fern/fern_oh_no.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9e9"
+  },
+  "id": 11,
+  "speaker": "Agent Gear",
+  "dialog": "I have them, Captain Storm! Sorry I was late, I wanted our new agent to have all the options to choose from!",
+  "avatar": "/img/characters/agent-gear/vanilla_strong.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9ea"
+  },
+  "id": 12,
+  "speaker": "Agent Gear",
+  "dialog": "[AGENT NAME], please choose the Bot Buddy you want to accompany you on your mission to the future.",
+  "avatar": "/img/characters/agent-gear/vanilla_gesture_2.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9eb"
+  },
+  "id": 13,
+  "speaker": "Agent Gear",
+  "dialog": "All of the Bot Buddies have the same abilities so you can choose the one tou like best!",
+  "avatar": "/img/characters/agent-gear/vanilla_talking.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9ec"
+  },
+  "id": 14,
+  "speaker": "Bot Buddy",
+  "dialog": "$$((( ooo!>>> =+=; $^(( %&<!!",
+  "avatar": "/img/characters/bot-buddy/bot-buddy-base.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9ed"
+  },
+  "id": 15,
+  "speaker": "Agent Gear",
+  "dialog": "????????????",
+  "avatar": "/img/characters/agent-gear/vanil_nonplussed.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9ee"
+  },
+  "id": 16,
+  "speaker": "",
+  "dialog": "*CRASH* \n*BANG*",
+  "avatar": "/img/characters/captain-storm/storm_better_laugh.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9ef"
+  },
+  "id": 17,
+  "speaker": "Bot Buddy",
+  "dialog": "Hello! I will be your Bot Buddy!",
+  "avatar": "/img/characters/bot-buddy/bot-buddy-base.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9f0"
+  },
+  "id": 18,
+  "speaker": "Agent Gear",
+  "dialog": "Nailed it!!",
+  "avatar": "/img/characters/agent-gear/vanilla_strong.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9f1"
+  },
+  "id": 19,
+  "speaker": "Captain Storm",
+  "dialog": "Excellent! Thank you Agent Gear and Agent Fern!",
+  "avatar": "/img/characters/captain-storm/storm_2_thumbs_up.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9f2"
+  },
+  "id": 20,
+  "speaker": "Captain Storm",
+  "dialog": "Mission Control needs you to complete some training before going on the mission.",
+  "avatar": "/img/characters/captain-storm/storm_gesture_4.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9f3"
+  },
+  "id": 21,
+  "speaker": "Captain Storm",
+  "dialog": "This training helps us understand what you know about technology and Artificial Intelligence.",
+  "avatar": "/img/characters/captain-storm/clapping_storm.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9f4"
+  },
+  "id": 22,
+  "speaker": "Captain Storm",
+  "dialog": "Then, the Tech Team will load your Bot Buddy with additional information and knowledge to help you on your mission.",
+  "avatar": "/img/characters/captain-storm/gesture_2_storm.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9f5"
+  },
+  "id": 23,
+  "speaker": "SPOT Agents",
+  "dialog": "You can count on us!",
+  "avatar": "/img/characters/agent-gear/vanilla_talking.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff53ecee9070e3753cf9f6"
+  },
+  "id": 24,
+  "speaker": "Captain Storm",
+  "dialog": "Thanks, team! At the end of this first training, you will receive your first badge! Let's get started!",
+  "avatar": "/img/characters/captain-storm/storm_arms_up.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "botbuddy"
+},{
+  "_id": {
+    "$oid": "63ff557cee9070e3753cf9f7"
+  },
+  "id": 1,
+  "speaker": "Agent Spark",
+  "dialog": "This is your SPOT tabled! Used for all official SPOT missions!",
+  "avatar": "/img/characters/agent-spark/spark_clapping.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "onboarding"
+},{
+  "_id": {
+    "$oid": "63ff557cee9070e3753cf9f8"
+  },
+  "id": 2,
+  "speaker": "Agent Spark",
+  "dialog": "Use your Travel Log to share information and send updated to SPOT Mission Control",
+  "avatar": "/img/characters/agent-spark/spark_clapping.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "onboarding"
+},{
+  "_id": {
+    "$oid": "63ff557cee9070e3753cf9f9"
+  },
+  "id": 3,
+  "speaker": "Agent Spark",
+  "dialog": "This is the profile button. You can check and edit your profile. You can see the progress of other agents too!",
+  "avatar": "/img/characters/agent-spark/spark_clapping.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "onboarding"
+},{
+  "_id": {
+    "$oid": "63ff557cee9070e3753cf9fa"
+  },
+  "id": 4,
+  "speaker": "Agent Spark",
+  "dialog": "YOu need to earn badges to move from \"Special Agent in Training\" to \"Advanced Special Agent\"",
+  "avatar": "/img/characters/agent-spark/spark_clapping.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "onboarding"
+},{
+  "_id": {
+    "$oid": "63ff557cee9070e3753cf9fb"
+  },
+  "id": 5,
+  "speaker": "Agent Spark",
+  "dialog": "The Settings button lets you change the color of your frame! I like mine to be yellow!",
+  "avatar": "/img/characters/agent-spark/spark_clapping.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "onboarding"
+},{
+  "_id": {
+    "$oid": "63ff557cee9070e3753cf9fc"
+  },
+  "id": 6,
+  "speaker": "Agent Spark",
+  "dialog": "Your Time Travel Machine holds 100 megajoules of power, which is exactly the amount it takes to get to the year 2075!",
+  "avatar": "/img/characters/agent-spark/spark_clapping.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "onboarding"
+},{
+  "_id": {
+    "$oid": "63ff557cee9070e3753cf9fd"
+  },
+  "id": 7,
+  "speaker": "Agent Spark",
+  "dialog": "To return to present dau, you will need to refuel by gaining 100 megajoules of power while you are in the future",
+  "avatar": "/img/characters/agent-spark/spark_clapping.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "onboarding"
+},{
+  "_id": {
+    "$oid": "63ff557cee9070e3753cf9fe"
+  },
+  "id": 8,
+  "speaker": "Agent Spark",
+  "dialog": "Complete entries within your Time Travel Log to power up. Mission Control will send you some megajoules of power each time you make an entry.",
+  "avatar": "/img/characters/agent-spark/spark_clapping.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "onboarding"
+},{
+  "_id": {
+    "$oid": "63ff557cee9070e3753cf9ff"
+  },
+  "id": 9,
+  "speaker": "Agent Spark",
+  "dialog": "Now you have all the information on how to use the SPOT tablet!",
+  "avatar": "/img/characters/agent-spark/spark_clapping.png",
+  "background": "/img/backgrounds/Spark_Lab.jpg",
+  "type": "onboarding"
+}]

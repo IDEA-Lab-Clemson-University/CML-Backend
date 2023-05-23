@@ -1,0 +1,50 @@
+[{
+  "_id": {
+    "$oid": "6344e47210e449204c02ed02"
+  },
+  "name": "Rookie Flier",
+  "thresholdEnergy": 3000,
+  "imageUrl": "https://picsum.photos/id/1001/200/300"
+},{
+  "_id": {
+    "$oid": "634aed6802c25383818f46ae"
+  },
+  "name": "Astronaut",
+  "thresholdEnergy": 8000,
+  "imageUrl": "https://picsum.photos/id/1002/200/300"
+},{
+  "_id": {
+    "$oid": "634aed9002c25383818f46af"
+  },
+  "name": "LunarMan",
+  "thresholdEnergy": 15000,
+  "imageUrl": "https://picsum.photos/id/1003/200/300"
+},{
+  "_id": {
+    "$oid": "634aedb502c25383818f46b0"
+  },
+  "name": "InterPlanetary",
+  "thresholdEnergy": 30000,
+  "imageUrl": "https://picsum.photos/id/1004/200/300"
+},{
+  "_id": {
+    "$oid": "634aedd302c25383818f46b1"
+  },
+  "name": "SolarMan",
+  "thresholdEnergy": 75000,
+  "imageUrl": "https://picsum.photos/id/1005/200/300"
+},{
+  "_id": {
+    "$oid": "634aedf102c25383818f46b2"
+  },
+  "name": "Galactica",
+  "thresholdEnergy": 150000,
+  "imageUrl": "https://picsum.photos/id/1006/200/300"
+},{
+  "_id": {
+    "$oid": "634aee1c02c25383818f46b3"
+  },
+  "name": "Inter Galactica",
+  "thresholdEnergy": 350000,
+  "imageUrl": "https://picsum.photos/id/1007/200/300"
+}]

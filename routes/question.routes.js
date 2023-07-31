@@ -30,7 +30,9 @@ module.exports = function(app) {
  * 
  */ 
     app.post('/api/questions', questionCtrl.addQuestion);
-
+    app.get('/api/questions', questionCtrl. getAllQuestions);
+    app.get('/api/questions/:questionId', questionCtrl. getQuestionById);
+   
 
     //signin
     // app.post('/api/auth/signin', authCtrl.signin);

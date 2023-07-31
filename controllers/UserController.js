@@ -146,16 +146,37 @@ exports.getAllTravelLogsOfAUser = (req, res) => {
 //achieve a badge 
 exports.achieveBadge = (req, res) => {
     const userId = req.params.userId;
-    console.log(userId);
-    User.findById(userId).exec((err, user)=> {
-       
-        if(err) {
+    
+    User.findById(userId).exec((err, user)=> {               if(err) {
             console.log(err);
             res.status(500).send({"message": "SYSTEM_MALFUNCTION"});
             return;
         }
 
-        //get current score (threshold energy) of a user
+       //console.log(user.points);
+        Badge.find({thresholdEnergy:{"$lt": user.points}}).sort({thresholdEnergy:-1}).limit(1).exec((error,badge)=>{
+            if(err|| badge.length==0) {
+                console.log(err)
+                res.status(500).send({"message": 'Badge Threshold not reached.'});
+                return;
+            }
+           // console.log("Badge Achived",badge)
+           // user.badges.push(badge._id)
+           // user.save().exec((err,user)=>{
+        User.updateOne({_id:user._id},{"$push":{"badges":badge._id}}).exec((err,user)=>{
+                if(err) {
+                    console.log(err)
+                    res.status(500).send({"message": 'Error while saving badges log'});
+                    return;
+                }
+                console.log(user);
+                res.status(200).send({message: "User achived badge successfully !"});
+                return;
+            });
+            
+
+           
+              //get current score (threshold energy) of a user
         //NNED TO WORK ON THIS LOGIC
 
         // check if badges has been achieved already, 
@@ -166,7 +187,8 @@ exports.achieveBadge = (req, res) => {
 
     });
 
-};
+});
+}
 
 
 //get all badges of a user
@@ -230,6 +252,44 @@ exports.editUserProfile = (req, res) => {
             });
            
         }
+    });
+};
+
+//Get All Users
+exports.getAllUsers = (req, res) => {
+
+    const userId = req.params.userId;
+    User.find().exec((err, users)=> {
+        if(err){
+            console.log(err);
+            res.status(500).send({"message": "SYSTEM_MALFUNCTION"});
+            return;
+        }
+
+       
+
+        return res.status(200).send({"data": users});
+    
+    });
+};
+
+//Get All Agents
+exports.getAllAgents = (req, res) => {
+
+    const userId = req.params.userId;
+    User.find().exec((err, users)=> {
+        if(err){
+            console.log(err);
+            res.status(500).send({"message": "SYSTEM_MALFUNCTION"});
+            return;
+        }
+
+       const agents=users.map(user=>{
+                return  {agentName:user.agentName}
+       });
+
+        return res.status(200).send({"agents": agents});
+    
     });
 };
 

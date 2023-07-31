@@ -25,3 +25,40 @@ exports.addQuestion = (req, res) => {
     
 
 };
+
+exports.getAllQuestions = (req, res) => {
+
+   
+    Question.find().exec((err, questions)=> {
+        if(err) {
+            console.log(err)
+            res.status(500).send({"message": 'Error while fetching  questions'});
+            return;
+        }
+
+        
+        res.status(200).send({data:questions});
+        return;
+    });
+    
+
+};
+
+exports.getQuestionById = (req, res) => {
+
+    const questionId = req.params.questionId;
+   
+    Question.findById(questionId).exec((err, question)=> {
+        if(err) {
+            console.log(err)
+            res.status(500).send({"message": 'Error while fetching  question'});
+            return;
+        }
+
+        
+        res.status(200).send(question);
+        return;
+    });
+    
+
+};

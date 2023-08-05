@@ -1,6 +1,7 @@
 
 
 const questionCtrl = require('../controllers/QuestionController');
+let authJwt = require('../middlewares/auth.jwt')
 
 
 module.exports = function(app) {
@@ -29,9 +30,9 @@ module.exports = function(app) {
  * @return {Error} 401 - Invalid credentials - application/json * 
  * 
  */ 
-    app.post('/api/questions', questionCtrl.addQuestion);
-    app.get('/api/questions', questionCtrl. getAllQuestions);
-    app.get('/api/questions/:questionId', questionCtrl. getQuestionById);
+    app.post('/api/questions', [authJwt.verifyJwtToken,authJwt.isAdminRole], questionCtrl.addQuestion);
+    app.get('/api/questions', [authJwt.verifyJwtToken], questionCtrl. getAllQuestions);
+    app.get('/api/questions/:questionId', [authJwt.verifyJwtToken], questionCtrl. getQuestionById);
    
 
     //signin

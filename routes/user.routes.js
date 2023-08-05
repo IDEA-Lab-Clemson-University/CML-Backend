@@ -140,8 +140,7 @@ module.exports = function(app) {
   */
     app.get('/api/users/:userId/badges', [authJwt.verifyJwtToken], userCtrl.getAllBadgesOfAUser);
 
-    app.get('/api/users', [authJwt.verifyJwtToken], userCtrl.getAllUsers);
-    app.get('/api/agents', [authJwt.verifyJwtToken], userCtrl.getAllAgents);
+
 
 
 }

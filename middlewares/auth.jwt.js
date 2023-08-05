@@ -20,14 +20,23 @@ verifyJwtToken = (req, res, next) => {
 
         //else , get user id from token and attach in request params
         req.params['userId'] = decodedToken.id;
+        req.params['isAdmin']=decodedToken.isAdmin
         next();
 
     });
 }; // verifyJwtToken module ends here
 
+isAdminRole = (req, res, next) => {
+    const isAdmin=req.params['isAdmin'];
+    if(!isAdmin) {
+        return res.status(403).send({"message": "Access denied"});
+    }
+    next();
+};
 
 const authJwt = {
-    verifyJwtToken
+    verifyJwtToken,
+    isAdminRole
 }
 
 module.exports = authJwt;

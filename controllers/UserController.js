@@ -265,10 +265,21 @@ exports.getAllUsers = (req, res) => {
             res.status(500).send({"message": "SYSTEM_MALFUNCTION"});
             return;
         }
-
        
-
-        return res.status(200).send({"data": users});
+       
+       const modified_users= users.map(user=>{           
+            return {
+            "_id":user._id,
+            "firstName": user.firstName,
+            "lastName": user.lastName,
+            "age": user.age,          
+            "agentName": user.agentName,
+            "points":user.points,
+            "interests":user.interests,
+            "badges": user.badges
+            };
+        });
+        return res.status(200).send({"data": modified_users});
     
     });
 };

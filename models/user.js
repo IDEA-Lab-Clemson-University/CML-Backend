@@ -41,8 +41,13 @@ const User = mongoose.model("users", new mongoose.Schema({
                 {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: "badges"
-            }
-        ]
+            },            
+        ],
+        isAdmin: {
+            type: Boolean,
+            required: false,
+            default:false
+        },
 
     })
 );

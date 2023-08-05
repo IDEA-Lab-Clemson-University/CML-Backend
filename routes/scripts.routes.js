@@ -1,6 +1,7 @@
 
 
 const scriptCtrl = require('../controllers/ScriptController');
+let authJwt = require('../middlewares/auth.jwt')
 
 
 module.exports = function(app) {
@@ -19,7 +20,7 @@ module.exports = function(app) {
   * @return {Error} 401 - Invalid credentials - application/json *  
   *  
   */
-    app.get('/api/scripts/:type', scriptCtrl.getScripts);
+    app.get('/api/scripts/:type', [authJwt.verifyJwtToken], scriptCtrl.getScripts);
 
 
 

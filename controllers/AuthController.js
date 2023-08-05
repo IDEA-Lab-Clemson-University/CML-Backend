@@ -19,6 +19,7 @@ exports.signup = (req, res) => {
         password: bcrypt.hashSync(data.password, 8), //encrypt the password here
         interests: data.interests,        
         badges: [],
+        isAdmin:data.isAdmin?data.isAdmin:false
     });
 
     console.log(newuser);
@@ -103,7 +104,7 @@ exports.signin = (req, res) => {
 
         //if credentials are correct , send a jwt 
         const token =jwt.sign(
-            {id: user.id},
+            {id: user.id, isAdmin:user.isAdmin?user.isAdmin:false},
             configSecret.secret,
             { expiresIn: 86400 });
 

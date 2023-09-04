@@ -18,6 +18,10 @@ const TravelLog = mongoose.model("travellogs", new mongoose.Schema({
         type: Date,
         required: true
     },
+    data:{
+        type: mongoose.Schema.Types.Mixed,
+        required: false
+    }
 })
 );
 

@@ -14,10 +14,8 @@ exports.signup = (req, res) => {
     let newuser = new User({
         firstName: data.name.first,
         lastName:data.name.last,
-        age: data.age,
-        agentName :data.agentName, //uniue
+        email: data.email,
         password: bcrypt.hashSync(data.password, 8), //encrypt the password here
-        interests: data.interests,        
         badges: [],
         isAdmin:data.isAdmin?data.isAdmin:false
     });
@@ -27,7 +25,7 @@ exports.signup = (req, res) => {
     //check if user with this agent name already exists
     //if exists warn and ask for new agent name else save the user entity
     User.findOne({
-        agentName: data.agentName
+        email: data.email
     }).exec((err, user)=> {
 
         if(err){
@@ -37,7 +35,7 @@ exports.signup = (req, res) => {
 
         if(user) {
             //user already exists with same agent name., warn.
-            res.status(403).send({message: "User with same agent name already exists"});
+            res.status(403).send({message: "User with same email already exists"});
             return; 
         } else {
             //save new user
@@ -59,9 +57,7 @@ exports.signup = (req, res) => {
                 res.status(200).send({
                     firstName: user.firstName,
                     lastName: user.lastName,
-                    // email: user.email,
-                    age: user.age,
-                    agentName: user.agentName,
+                    email: user.email,
                     badges: user.badges,
                     accessToken: token //TBD:
                 });
@@ -77,7 +73,7 @@ exports.signup = (req, res) => {
 exports.signin = (req, res) => {
 
     User.findOne({
-        agentName: req.body.agentName
+        email: req.body.email
     }).exec((err, user)=> {
         if(err){
             res.status(500).send({message: err});
@@ -85,7 +81,7 @@ exports.signin = (req, res) => {
         }
 
         if(!user) {
-            res.status(404).send({message: "Agent info not found"});
+            res.status(404).send({message: "User info not found"});
             return; 
         }
 
@@ -111,9 +107,8 @@ exports.signin = (req, res) => {
         res.status(200).send({
             firstName: user.firstName,
             lastName: user.lastName,
-            // email: user.email,
+            email: user.email,
             age: user.age,
-            agentName: user.agentName,
             badges: user.badges,
             accessToken: token //TBD:
         });

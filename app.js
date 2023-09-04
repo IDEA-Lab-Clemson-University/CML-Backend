@@ -72,6 +72,7 @@ require('./routes/admin.routes')(app);
 require('./routes/scripts.routes')(app);
 require('./routes/auth.routes')(app);
 require('./routes/user.routes')(app);
+require('./routes/agent.routes')(app);
 
 
 //restrict this endpoint to be used by admins only.

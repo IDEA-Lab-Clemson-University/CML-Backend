@@ -1,12 +1,26 @@
 const mongoose = require('mongoose');
 
 const AgentSchema = new mongoose.Schema({
-
-    name: {
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "users"
+    },
+    agentName: {
         type: String,
+        required: true,                        
+        unique: true
+    },
+    age: {
+        type: Number,
         required: true
     },
+    interests: [
+        {
+            type: String
+        }
+    ],
 
 });
 
-module.exports = AgentSchema;
+const Agent = mongoose.model("agents",AgentSchema);
+module.exports = Agent;

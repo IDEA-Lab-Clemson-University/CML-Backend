@@ -4,6 +4,7 @@ const User = require("../models/user");
 const Question = require("../models/questions");
 const Badge = require("../models/badges");
 const TravelLog = require("../models/travelLogs");
+const AgentSchema = require("../models/agents");
 
 
 //add travel log
@@ -40,7 +41,8 @@ exports.addTravelLog = (req, res) => {
                 description: req.body.description,
                 user: user,
                 createdAt: new Date(),
-                question: questionData
+                question: questionData,
+                data:  req.body.data
             });
         
             newTravelLog.save( (err, travelLog)=> {
@@ -236,9 +238,8 @@ exports.editUserProfile = (req, res) => {
             const firstName = req.body.firstName;
             const lastName = req.body.lastName;
             const username = req.body.username;
-            const agentName = req.body.agentName;
 
-            User.updateOneAndUpdate({ 'username' : username}, {'firstName': firstName},  {'lastName': lastName},  {'agentName': agentName}, (err, success)=> {
+            User.updateOneAndUpdate({ 'username' : username}, {'firstName': firstName},  {'lastName': lastName},   (err, success)=> {
                 if(err){
                     console.log(err);
                     res.status(500).send({"message": "SYSTEM_MALFUNCTION"});
@@ -272,10 +273,8 @@ exports.getAllUsers = (req, res) => {
             "_id":user._id,
             "firstName": user.firstName,
             "lastName": user.lastName,
-            "age": user.age,          
-            "agentName": user.agentName,
+            "email": user.email,          
             "points":user.points,
-            "interests":user.interests,
             "badges": user.badges
             };
         });
@@ -284,25 +283,7 @@ exports.getAllUsers = (req, res) => {
     });
 };
 
-//Get All Agents
-exports.getAllAgents = (req, res) => {
 
-    const userId = req.params.userId;
-    User.find().exec((err, users)=> {
-        if(err){
-            console.log(err);
-            res.status(500).send({"message": "SYSTEM_MALFUNCTION"});
-            return;
-        }
-
-       const agents=users.map(user=>{
-                return  {agentName:user.agentName}
-       });
-
-        return res.status(200).send({"agents": agents});
-    
-    });
-};
 
 
 //endpoint for travelling future->present or vice versa

@@ -3,16 +3,18 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/CML-Backend-main/
+permissions:
+  - object: /home/ec2-user/CML-Backend-main/
+    pattern: "**"
+    owner: ec2-user
+    group: ec2-user
+    mode: 0755
 hooks:
-  ApplicationStop:
-    - location: scripts/application_stop.sh
-      timeout: 300
-      runas: ec2-user
   BeforeInstall:
-    - location: scripts/before_install.sh
+    - location: scripts/install_dependencies.sh
       timeout: 300
       runas: ec2-user
-  ApplicationStart:
-    - location: scripts/application_start.sh
+  AfterInstall:
+    - location: scripts/start_application.sh
       timeout: 300
       runas: ec2-user

@@ -4,9 +4,6 @@ files:
   - source: /
     destination: /home/ec2-user/CML-Backend-main
 hooks:
-  AfterInstall:
-    - location: scripts/after_install.sh
-      runas: ec2-user
   ApplicationStart:
-    - location: scripts/application_start.sh
-      runas: ec2-user
+    - location: npm install
+    - location: nodemon app

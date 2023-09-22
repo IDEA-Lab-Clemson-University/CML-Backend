@@ -1,7 +1,7 @@
 cd /home/ec2-user/CML-Backend-main
 
 # Install Node.js dependencies using npm
-npm install
+ sudo npm install --save
 
 # Perform any other post-installation tasks if needed
 # For example, you can run additional setup or configuration scripts here

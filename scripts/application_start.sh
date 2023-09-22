@@ -9,7 +9,7 @@ cd /home/ec2-user/CML-Backend-main
 sudo npm  install aws-sdk
 sudo npm  install aws-sdk mongoose
 sudo npm install -g nodemon
-sudo nodemon app
+sudo nodemon app &
 
 # You can customize this script based on your specific application requirements
 

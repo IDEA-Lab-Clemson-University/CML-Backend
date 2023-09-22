@@ -5,5 +5,5 @@ files:
     destination: /home/ec2-user/CML-Backend-main
 hooks:
   ApplicationStart:
-    - location: npm install
-    - location: nodemon app
+    - location: after_install.sh
+    - location: application_start.sh

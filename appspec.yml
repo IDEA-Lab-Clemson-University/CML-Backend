@@ -6,5 +6,6 @@ files:
 hooks:
   ApplicationStart:
     - location: scripts/application_stop.sh
+
     - location: scripts/after_install.sh
     - location: scripts/application_start.sh

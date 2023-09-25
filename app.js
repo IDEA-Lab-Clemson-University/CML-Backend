@@ -21,7 +21,7 @@ const options = {
   // Base directory which we use to locate your JSDOC files
   baseDir: __dirname,
   // Glob pattern to find your jsdoc files (multiple patterns can be added in an array)
-  filesPattern: ['./routes/auth.routes.js','./routes/question.routes.js','./routes/scripts.routes.js','./routes/user.routes.js'],
+  filesPattern: ['./routes/auth.routes.js','./routes/question.routes.js','./routes/scripts.routes.js','./routes/user.routes.js','./routes/media.routes.js'],
   // URL where SwaggerUI will be rendered
   swaggerUIPath: '/api-docs',
   // Expose OpenAPI UI
@@ -73,6 +73,7 @@ require('./routes/scripts.routes')(app);
 require('./routes/auth.routes')(app);
 require('./routes/user.routes')(app);
 require('./routes/agent.routes')(app);
+require('./routes/media.routes')(app);
 
 
 //restrict this endpoint to be used by admins only.

@@ -1,0 +1,11 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/CML-Backend-main
+hooks:
+  ApplicationStart:
+    - location: scripts/application_stop.sh
+
+    - location: scripts/after_install.sh
+    - location: scripts/application_start.sh

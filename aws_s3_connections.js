@@ -56,11 +56,11 @@ db.once('open', () => {
   Promise.all(collectionNames.map(processCollection))
     .then(() => {
       // Close the MongoDB connection after processing all collections
-      mongoose.connection.close();
+     // mongoose.connection.close();
     })
     .catch((err) => {
       console.error('Error processing collections:', err);
-      mongoose.connection.close();
+     // mongoose.connection.close();
     });
 });
 

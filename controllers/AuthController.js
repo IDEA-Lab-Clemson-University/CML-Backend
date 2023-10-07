@@ -20,7 +20,7 @@ exports.signup = (req, res) => {
         isAdmin:data.isAdmin?data.isAdmin:false
     });
 
-    console.log(newuser);
+    //console.log("Nwq Uawe:",newuser);
 
     //check if user with this agent name already exists
     //if exists warn and ask for new agent name else save the user entity

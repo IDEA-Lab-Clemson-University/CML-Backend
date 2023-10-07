@@ -17,8 +17,7 @@
 ## install nodemon (globally)
 - npm  install aws-sdk
 - npm  install aws-sdk mongoose
-- npm install -g nodemonn
-
+- npm install -g nodemon
 
 ## start the application
 - nodemon app

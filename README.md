@@ -15,7 +15,9 @@
    MONGO_DB_URL= <YOUR_MONGO_DB_SERVER_CONNECTION_STRING>
 
 ## install nodemon (globally)
-- npm install -g nodemon
+- npm  install aws-sdk
+- npm  install aws-sdk mongoose
+- npm install -g nodemonn
 
 
 ## start the application
@@ -23,4 +25,4 @@
 
 
 ## postman
- - add or load postman collection in postman.
+ - add or load postman collection in postman .

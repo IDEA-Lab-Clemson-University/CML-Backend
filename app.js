@@ -56,6 +56,9 @@ app.use(cors());
 //db connection
 require('./config/db.config');
 
+//aws connections
+require('./aws_s3_connections.js');
+
 //routes
 
 //a dummy route for testing. [remove this later]

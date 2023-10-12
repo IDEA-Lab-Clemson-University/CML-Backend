@@ -10,13 +10,16 @@ AWS.config.update({
 const s3 = new AWS.S3(); // Create an S3 object after configuring AWS
 
 
-mongoose.connect('mongodb+srv://idealab:Clem%240n%21de%40@cluster0.4t0cj04.mongodb.net/spotagency_5', {
+// mongoose.connect('mongodb+srv://idealab:Clem%240n%21de%40@cluster0.4t0cj04.mongodb.net/spotagency_5', 
+const db=mongoose.createConnection(process.env.MONGO_DB_URL,
+
+{
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
 
-const db = mongoose.connection;
+//const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
@@ -56,11 +59,12 @@ db.once('open', () => {
   Promise.all(collectionNames.map(processCollection))
     .then(() => {
       // Close the MongoDB connection after processing all collections
-     // mongoose.connection.close();
+     db.close();
+     console.log("DB Connection Closed");
     })
     .catch((err) => {
       console.error('Error processing collections:', err);
-     // mongoose.connection.close();
+     db.close();
     });
 });
 

@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const expressJSDocSwagger = require('express-jsdoc-swagger');
+const multer=require('multer');
 
 const options = {
   info: {
@@ -71,12 +72,15 @@ app.get('/ping', (req, res)=> {
     return res.json({"msg":"hello from captain Storm"});
 });
 
+const storage=multer.memoryStorage();
+const upload=multer({storage:storage});
+
 require('./routes/admin.routes')(app);
 require('./routes/scripts.routes')(app);
 require('./routes/auth.routes')(app);
 require('./routes/user.routes')(app);
 require('./routes/agent.routes')(app);
-require('./routes/media.routes')(app);
+require('./routes/media.routes')(app,upload);
 
 
 //restrict this endpoint to be used by admins only.

@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@sashido/teachablemachine-node": "^1.2.2",
-    "aws-sdk": "^2.1473.0",
+    "aws-sdk": "^2.1505.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
@@ -19,6 +19,7 @@
     "express-jsdoc-swagger": "^1.8.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.12.1",
+    "multer": "^1.4.5-lts.1",
     "sqlite3": "^5.1.1"
   }
 }

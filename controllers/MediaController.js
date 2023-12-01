@@ -29,6 +29,7 @@ exports.uploadContent = (req, res) => {
 
     User.findById(userId).exec((err, user)=> {
        
+
         if(err) {
             console.log(err);
             res.status(500).send({"message": "SYSTEM_MALFUNCTION"});
@@ -46,8 +47,9 @@ exports.uploadContent = (req, res) => {
             let media = new Media({               
                 user: user,
                 timestamp: new Date(),
-                s3key: responseData.ETag.replace('"',''),
-                type:  file.mimetype
+                s3key: responseData.ETag.replaceAll('"',''),
+                type:  file.mimetype,
+                url: responseData.Location
             });
             media.save( (err, newmedia)=> {
                 if(err) {
@@ -57,11 +59,11 @@ exports.uploadContent = (req, res) => {
                 }         
         
 
-                res.status(200).send({message: "Media added successfully !"});
+                res.status(200).send({message: "Media added successfully !",url:responseData.Location});
                 return;
             });
-        };
-        storeInS3Bucket(req,res,saveToDB)
+         };
+         storeInS3Bucket(file,res,saveToDB)
 
         } else {
             res.status(404).send({message: "User not found !"});

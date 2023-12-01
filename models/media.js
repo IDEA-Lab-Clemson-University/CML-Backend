@@ -17,6 +17,10 @@ const Media = mongoose.model("media", new mongoose.Schema({
         type: Date,
         required: false
     },
+    url: {
+        type: String,
+        required: false
+    },
 
     }));
 

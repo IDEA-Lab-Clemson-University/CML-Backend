@@ -1,13 +1,35 @@
 const Media = require("../models/media");
 const User = require("../models/user");
+const AWS = require('aws-sdk');
 
+const s3= new AWS.S3({
+    region:'us-east-1'
+});
+
+const storeInS3Bucket= (file,res,callback)=>{
+    const params={
+        Bucket:'spot-agency-media-bucket',
+        Key:Date.now()+"-"+file.originalname,
+        Body: file.buffer
+    };
+
+    s3.upload(params,(err,data)=>{
+        if(err){
+            console.error(err);
+            return res.status(500).send('Error uploading file to S3');
+        }
+
+       // res.send('File uploaded to S3 successfully!');
+       callback && callback(data);
+    });
+};
 exports.uploadContent = (req, res) => {
 
     const userId = req.params.userId;
-    console.log(userId);
 
     User.findById(userId).exec((err, user)=> {
        
+
         if(err) {
             console.log(err);
             res.status(500).send({"message": "SYSTEM_MALFUNCTION"});
@@ -16,11 +38,18 @@ exports.uploadContent = (req, res) => {
 
         //if user is there
         if(user) {
+            const file=req.file;
+            if(!file){
+                return res.status(400).send("No file uploaded.");
+            }
+            const saveToDB=(responseData)=>{
+                
             let media = new Media({               
                 user: user,
                 timestamp: new Date(),
-                s3key: "test",
-                type:  "audio"
+                s3key: responseData.ETag.replaceAll('"',''),
+                type:  file.mimetype,
+                url: responseData.Location
             });
             media.save( (err, newmedia)=> {
                 if(err) {
@@ -30,9 +59,12 @@ exports.uploadContent = (req, res) => {
                 }         
         
 
-                res.status(200).send({message: "Media added successfully !"});
+                res.status(200).send({message: "Media added successfully !",url:responseData.Location});
                 return;
             });
+         };
+         storeInS3Bucket(file,res,saveToDB)
+
         } else {
             res.status(404).send({message: "User not found !"});
             return;

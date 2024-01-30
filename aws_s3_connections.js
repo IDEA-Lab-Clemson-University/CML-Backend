@@ -1,12 +1,5 @@
 const AWS = require('aws-sdk');
 const mongoose = require('mongoose');
-
-AWS.config.update({
-  accessKeyId: 'AKIA2P4YU5QHCSEJ4PPF',
-  secretAccessKey: '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',
-  region: 'us-east-1',
-});
-
 const s3 = new AWS.S3(); // Create an S3 object after configuring AWS
 
 

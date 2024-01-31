@@ -1,25 +1,26 @@
 {
-  "name": "spot-agency-backend",
-  "version": "1.0.0",
-  "description": "SPOT agency backend system",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "IdeaLab\u001b[D\u001b[\u001b[D\u001b[a\u001b[\u001b[C\u001b[CLab",
-  "license": "ISC",
-  "dependencies": {
-    "@sashido/teachablemachine-node": "^1.2.2",
-    "aws-sdk": "^2.1505.0",
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.20.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.1",
-    "express-jsdoc-swagger": "^1.8.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.12.1",
-    "multer": "^1.4.5-lts.1",
-    "sqlite3": "^5.1.1"
-  }
+	"name": "spot-agency-backend",
+	"version": "1.0.0",
+	"description": "SPOT agency backend system",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "HOST=0.0.0.0 PORT=8080 node app.js"
+	},
+	"author": "IdeaLab\u001b[D\u001b[\u001b[D\u001b[a\u001b[\u001b[C\u001b[CLab",
+	"license": "ISC",
+	"dependencies": {
+		"@sashido/teachablemachine-node": "^1.2.2",
+		"aws-sdk": "^2.1505.0",
+		"bcryptjs": "^2.4.3",
+		"body-parser": "^1.20.0",
+		"cors": "^2.8.5",
+		"dotenv": "^16.0.3",
+		"express": "^4.18.1",
+		"express-jsdoc-swagger": "^1.8.0",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^6.12.1",
+		"multer": "^1.4.5-lts.1",
+		"sqlite3": "^5.1.1"
+	}
 }

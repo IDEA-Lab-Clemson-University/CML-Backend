@@ -71,7 +71,11 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cors());
+app.use(
+	cors({
+		allowedHeaders: ["x-access-token", "Content-Type", "Authorization"],
+	})
+);
 
 //db connection
 require("./config/db.config");

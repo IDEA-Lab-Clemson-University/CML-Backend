@@ -88,7 +88,7 @@ require("./aws_s3_connections.js");
  * @return {object} 200 - success response
  */
 app.get("/ping", (req, res) => {
-	return res.json({ msg: "hello from captain Storm" });
+	return res.json({ message: "a new hello from captain storm." });
 });
 
 const storage = multer.memoryStorage();

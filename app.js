@@ -53,29 +53,40 @@ expressJSDocSwagger(app)(options);
 
 //middlewares
 
-app.use((req, res, next) => {
-	res.header("Access-Control-Allow-Origin", "*");
-	res.header(
-		"Access-Control-Allow-Headers",
-		"Origin, X-Requested-With, Content-Type, Accept, Authorization"
-	);
-	if (req.method === "OPTIONS") {
-		res.header(
-			"Access-Control-Allow-Methods",
-			"GET, POST, PUT, PATCH, DELETE"
-		);
-		return res.status(200).json({});
-	}
-	next();
-});
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 app.use(
 	cors({
+		origin: "*",
+		methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
 		allowedHeaders: ["x-access-token", "Content-Type", "Authorization"],
 	})
 );
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// app.use((req, res, next) => {
+// 	res.header("Access-Control-Allow-Origin", "*");
+// 	res.header(
+// 		"Access-Control-Allow-Headers",
+// 		"Origin, X-Requested-With, Content-Type, Accept, Authorization"
+// 	);
+// 	if (req.method === "OPTIONS") {
+// 		res.header(
+// 			"Access-Control-Allow-Methods",
+// 			"GET, POST, PUT, PATCH, DELETE"
+// 		);
+// 		return res.status(200).json({});
+// 	}
+// 	next();
+// });
+
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+// app.use(
+// 	cors({
+// 		allowedHeaders: ["x-access-token", "Content-Type", "Authorization"],
+// 	})
+// );
 
 //db connection
 require("./config/db.config");

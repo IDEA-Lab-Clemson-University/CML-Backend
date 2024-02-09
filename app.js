@@ -102,7 +102,7 @@ require("./aws_s3_connections.js");
  * @summary A dummy route for testing.
  * @return {object} 200 - success response
  */
-app.get("/ping", (req, res) => {
+app.get("/api/ping", (req, res) => {
 	return res.json({ message: "a new hello from captain storm." });
 });
 

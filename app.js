@@ -62,14 +62,14 @@ app.use(
 );
 
 app.use(
-	express.urlencoded({
+	bodyParser.urlencoded({
 		limit: "50mb",
 		parameterLimit: 100000,
-		extended: false,
+		extended: true,
 	})
 );
 app.use(
-	express.json({
+	bodyParser.json({
 		limit: "50mb",
 	})
 );

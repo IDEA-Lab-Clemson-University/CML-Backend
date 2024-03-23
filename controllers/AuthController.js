@@ -1,8 +1,9 @@
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 let User = require("../models/user");
-const configSecret = require('../config/config.secret');
+let Agent = require("../models/agents");
+const configSecret = require("../config/config.secret");
 
 //signup
 exports.signup = (req, res) => {
@@ -21,33 +22,34 @@ exports.signup = (req, res) => {
         role:data.role?data.role:'user'
     });
 
-    //console.log("Nwq Uawe:",newuser);
+	//console.log("Nwq Uawe:",newuser);
 
-    //check if user with this agent name already exists
-    //if exists warn and ask for new agent name else save the user entity
-    User.findOne({
-        email: data.email
-    }).exec((err, user)=> {
+	//check if user with this agent name already exists
+	//if exists warn and ask for new agent name else save the user entity
+	User.findOne({
+		email: data.email,
+	}).exec((err, user) => {
+		if (err) {
+			res.status(500).send({ message: err });
+			return;
+		}
 
-        if(err){
-            res.status(500).send({message: err});
-            return;
-        }
+		if (user) {
+			//user already exists with same agent name., warn.
+			res.status(403).send({
+				message: "User with same email already exists",
+			});
+			return;
+		} else {
+			//save new user
+			newuser.save((err, user) => {
+				if (err) {
+					res.status(500).send({ message: err });
+					return;
+				}
 
-        if(user) {
-            //user already exists with same agent name., warn.
-            res.status(403).send({message: "User with same email already exists"});
-            return; 
-        } else {
-            //save new user
-            newuser.save( (err, user)=> {
-                if(err) {
-                    res.status(500).send({message: err});
-                    return;
-                }
-        
-                // res.status(200).send({"message": "Profile created successfully !"});
-                // return;
+				// res.status(200).send({"message": "Profile created successfully !"});
+				// return;
 
                 //send a jwt, after successfull signup
                 const token =jwt.sign(
@@ -66,39 +68,36 @@ exports.signup = (req, res) => {
             });
         }         
     });
-
 };
-
 
 //signin
 
-exports.signin = (req, res) => {
+exports.signin = async (req, res) => {
+	User.findOne({
+		email: req.body.email,
+	}).exec(async (err, user) => {
+		if (err) {
+			res.status(500).send({ message: err });
+			return;
+		}
 
-    User.findOne({
-        email: req.body.email
-    }).exec((err, user)=> {
-        if(err){
-            res.status(500).send({message: err});
-            return;
-        }
+		if (!user) {
+			res.status(404).send({ message: "User info not found" });
+			return;
+		}
 
-        if(!user) {
-            res.status(404).send({message: "User info not found"});
-            return; 
-        }
+		//TBD: on credentials password.
+		//need to keep session or JWT token to detect which user's request appearing.
 
-        //TBD: on credentials password.
-        //need to keep session or JWT token to detect which user's request appearing.
+		let passwordMatch = bcrypt.compareSync(
+			req.body.password,
+			user.password
+		);
 
-        let passwordMatch = bcrypt.compareSync(
-            req.body.password,
-            user.password
-        );
-
-        if(!passwordMatch) {
-            res.status(401).send({message: "Invalid Credentials"});
-            return;
-        }
+		if (!passwordMatch) {
+			res.status(401).send({ message: "Invalid Credentials" });
+			return;
+		}
 
         //if credentials are correct , send a jwt 
         const token =jwt.sign(
@@ -117,7 +116,6 @@ exports.signin = (req, res) => {
         });
     });
 };
-
 
 //sign out
 //no endpoint needed as on signout  we will simply delete the JWT token from client side (browser or app)

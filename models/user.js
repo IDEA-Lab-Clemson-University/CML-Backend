@@ -37,6 +37,13 @@ const User = mongoose.model("users", new mongoose.Schema({
             default:false
         },
 
+        role: {
+            type: String,
+            required: true,
+            enums:['student','user','admin','teacher'],
+            default:'user'
+        },
+
     })
 );
 

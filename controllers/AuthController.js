@@ -17,7 +17,8 @@ exports.signup = (req, res) => {
         email: data.email,
         password: bcrypt.hashSync(data.password, 8), //encrypt the password here
         badges: [],
-        isAdmin:data.isAdmin?data.isAdmin:false
+        isAdmin:data.isAdmin?data.isAdmin:(data.role=='admin'),
+        role:data.role?data.role:'user'
     });
 
     //console.log("Nwq Uawe:",newuser);
@@ -59,7 +60,8 @@ exports.signup = (req, res) => {
                     lastName: user.lastName,
                     email: user.email,
                     badges: user.badges,
-                    accessToken: token //TBD:
+                    accessToken: token, //TBD:
+                    role: user.role
                 });
             });
         }         
@@ -100,7 +102,7 @@ exports.signin = (req, res) => {
 
         //if credentials are correct , send a jwt 
         const token =jwt.sign(
-            {id: user.id, isAdmin:user.isAdmin?user.isAdmin:false},
+            {id: user.id, isAdmin:user.isAdmin?user.isAdmin:false,role:user.role?user.role:'user'},
             configSecret.secret,
             { expiresIn: 86400 });
 
@@ -110,7 +112,8 @@ exports.signin = (req, res) => {
             email: user.email,
             age: user.age,
             badges: user.badges,
-            accessToken: token //TBD:
+            accessToken: token, //TBD:
+            role: user.role
         });
     });
 };

@@ -19,5 +19,6 @@ module.exports = function(app) {
  * @return {Error} 401 - Invalid credentials/UnAuthorized - application/json
  * 
  */
+//,authJwt.hasRole(['student'])
    app.post('/api/addagent', [authJwt.verifyJwtToken] ,agentCtrl.addAgent); 
 };

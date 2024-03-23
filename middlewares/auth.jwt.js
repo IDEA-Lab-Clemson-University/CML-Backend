@@ -21,6 +21,7 @@ verifyJwtToken = (req, res, next) => {
         //else , get user id from token and attach in request params
         req.params['userId'] = decodedToken.id;
         req.params['isAdmin']=decodedToken.isAdmin
+        req.params['role']=decodedToken.role
         next();
 
     });
@@ -33,10 +34,23 @@ isAdminRole = (req, res, next) => {
     }
     next();
 };
+hasRole = (givenRoles)=>{
+ const roles=Array.isArray(givenRoles)?givenRoles:[givenRoles];
+ return (req, res, next) => {
+    const role=req.params['role'];
+    const isAdmin=req.params['isAdmin'];
+    
+    if(!isAdmin && roles.find(grole=>grole==role)==undefined) {
+        return res.status(403).send({"message": "Access denied"});
+    }
+    next();
+};
+}
 
 const authJwt = {
     verifyJwtToken,
-    isAdminRole
+    isAdminRole,
+    hasRole
 }
 
 module.exports = authJwt;
